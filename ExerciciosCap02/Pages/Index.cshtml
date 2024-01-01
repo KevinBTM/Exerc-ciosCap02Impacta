@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div>
+    @{
+        double custoFab, custoFinal, percentDist, percentImp, valorDist, valorImp;
+
+        custoFab = 100000.0;
+
+        percentDist = 28.0 / 100.0;
+        percentImp = 45.0 / 100.0;
+
+        valorDist = (percentDist * custoFab);
+        valorImp = (percentImp * custoFab);
+
+        custoFinal = custoFab + (percentDist * custoFab) + (percentImp * custoFab);
+
+    }
+    <p>Custo de fábrica do veículo: @custoFab.ToString("C")</p>
+    <p>Porcentagem do distribuídor: 28% - @valorDist.ToString("C")</p>
+    <p>Impostos: 45% - @valorImp.ToString("C")</p>
+    <hr />
+    <p>Custo Final: @custoFinal.ToString("C")</p>
+    
+</div>
