@@ -56,5 +56,36 @@
     <p>Salário padrão: @salario.ToString("C")</p>
     <p>Salário total: @salarioTotal.ToString("C")</p>
 
+    <hr />
+
+    <p>Exercício 3</p>
+
+    @{
+        string conta, mensagem;
+        double saldo, saldoAtual, debito, credito;
+
+        conta = "CC-12345";
+        saldo = 150.0;
+        credito = salarioTotal;
+        debito = 750.0;
+        saldoAtual = saldo + credito - debito;
+
+        if (saldoAtual > 0)
+        {
+            mensagem = "Saldo positivo !!";
+        }
+        else
+        {
+            mensagem = "Saldo negativo !";
+        }
+    }
+
+    <p>Número da conta: @conta</p>
+    <p>Saldo anterior: @saldo.ToString("C")</p>
+    <p>Crédito de sálario: @credito.ToString("C")</p>
+    <p>Pagamento de boleto: - @debito.ToString("C")</p>
+    <p>Saldo atual: @saldoAtual.ToString("C")</p>
+    <p> @mensagem </p>
+
     
 </div>
