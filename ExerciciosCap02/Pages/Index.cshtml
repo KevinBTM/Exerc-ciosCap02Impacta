@@ -5,6 +5,7 @@
 }
 
 <div>
+    <p>Exercício 1</p>
     @{
         double custoFab, custoFinal, percentDist, percentImp, valorDist, valorImp;
 
@@ -22,7 +23,38 @@
     <p>Custo de fábrica do veículo: @custoFab.ToString("C")</p>
     <p>Porcentagem do distribuídor: 28% - @valorDist.ToString("C")</p>
     <p>Impostos: 45% - @valorImp.ToString("C")</p>
-    <hr />
     <p>Custo Final: @custoFinal.ToString("C")</p>
+    <hr />
+
+    <p>Exercício 2</p>
+
+    @{
+        double hrsPadrao, hrsTrabalhadas, hrsExtra, valorHrs, percentExtra, salario, salarioTotal, valorExtra;
+
+        hrsPadrao = 160.0;
+        hrsTrabalhadas = 200.0;
+        hrsExtra = hrsTrabalhadas - hrsPadrao;
+        valorHrs = 18.0;
+        percentExtra = 50.0 / 100.0;
+        salario = hrsPadrao * valorHrs;
+        valorExtra = valorHrs + (percentExtra * valorHrs);
+
+        if (hrsTrabalhadas > hrsPadrao)
+        {
+            salarioTotal = salario + (hrsExtra * valorExtra);
+        }
+        else
+        {
+            salarioTotal = salario;
+        }
+    }
+
+    <p>Jornada padrão mensal: @hrsPadrao Horas</p>
+    <p>Valor da hora trabalhada: @valorHrs.ToString("C")</p>
+    <p>Valor da hora extra: @valorExtra.ToString("C")</p>
+    <p>Horas totais trabalhadas: @hrsTrabalhadas Horas</p>
+    <p>Salário padrão: @salario.ToString("C")</p>
+    <p>Salário total: @salarioTotal.ToString("C")</p>
+
     
 </div>
